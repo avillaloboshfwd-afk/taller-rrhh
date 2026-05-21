@@ -46,10 +46,10 @@ export const CheckInScreen: React.FC<CheckInScreenProps> = ({ user, onSubmit, on
           </div>
           <div>
             <h1 className="text-2xl font-extrabold text-slate-800 leading-tight">
-              Hola, {firstName} 👋
+              Hola, {firstName}
             </h1>
             <p className="text-sm text-slate-500 font-medium mt-0.5">
-              Antes de empezar, contame cómo te sentís hoy. Esto me ayuda a darte una respuesta más útil.
+              Antes de empezar, cuéntanos cómo te sientes hoy. Esto me ayuda a darte una respuesta más útil.
             </p>
           </div>
         </div>
@@ -74,7 +74,6 @@ export const CheckInScreen: React.FC<CheckInScreenProps> = ({ user, onSubmit, on
                         : 'border-slate-100 bg-white hover:border-slate-300 hover:bg-slate-50 text-slate-600'
                     }`}
                   >
-                    <div className="text-3xl mb-1.5 leading-none">{opt.emoji}</div>
                     <div className="text-sm font-bold leading-tight">{opt.label}</div>
                     <div className="text-[10px] font-semibold text-slate-500 mt-0.5 leading-tight">
                       {opt.description}

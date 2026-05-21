@@ -9,13 +9,34 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts';
-import { Heart, Lock, Loader2, Sparkles, Calendar, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import {
+  Heart,
+  Lock,
+  Loader2,
+  Sparkles,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  Smile,
+  Meh,
+  Frown,
+  AlertTriangle,
+} from 'lucide-react';
 import { useUserEntries, useEmotions, useWellbeingTips } from '../../hooks/usePulseData';
 import type { AppUser } from '../../types';
 
 interface MyWellbeingViewProps {
   user: AppUser;
 }
+
+const pulseEmotionIcons: Record<string, React.ComponentType<any>> = {
+  'muy-bien': Smile,
+  'bien': Smile,
+  'neutral': Meh,
+  'estresado': AlertTriangle,
+  'desmotivado': Frown,
+};
 
 export const MyWellbeingView: React.FC<MyWellbeingViewProps> = ({ user }) => {
   const { data: entries, loading: loadingEntries, error } = useUserEntries(user.id);
@@ -31,7 +52,7 @@ export const MyWellbeingView: React.FC<MyWellbeingViewProps> = ({ user }) => {
         date: d.toLocaleDateString('es-CR', { day: '2-digit', month: 'short' }),
         score: em?.score ?? 3,
         label: em?.label ?? 'Neutral',
-        emoji: em?.emoji ?? '😐',
+        id: em?.id ?? 'neutral',
       };
     });
   }, [entries, emotions]);
@@ -139,7 +160,7 @@ export const MyWellbeingView: React.FC<MyWellbeingViewProps> = ({ user }) => {
                   <YAxis domain={[1, 5]} ticks={[1, 2, 3, 4, 5]} stroke="#94a3b8" fontSize={11} tickLine={false} axisLine={false} />
                   <Tooltip
                     contentStyle={{ backgroundColor: '#1e293b', borderRadius: 12, border: 'none', color: '#f8fafc', fontSize: 12 }}
-                    formatter={(_, __, props) => [`${props.payload.emoji} ${props.payload.label}`, 'Estado']}
+                    formatter={(_, __, props) => [`${props.payload.label}`, 'Estado']}
                   />
                   <ReferenceLine y={3} stroke="#cbd5e1" strokeDasharray="4 4" />
                   <Line type="monotone" dataKey="score" stroke="#10b981" strokeWidth={3} dot={{ r: 5, fill: '#10b981' }} activeDot={{ r: 7 }} />
@@ -162,12 +183,15 @@ export const MyWellbeingView: React.FC<MyWellbeingViewProps> = ({ user }) => {
               {entries && entries.slice(-6).reverse().map((e) => {
                 const em = emotions?.find((x) => x.id === e.emotionId);
                 const d = new Date(e.createdAt);
+                const EmotionIcon = em ? (pulseEmotionIcons[em.id] || Smile) : Smile;
                 return (
                   <div
                     key={e.id}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:bg-slate-50/60 transition-colors"
                   >
-                    <div className="text-2xl shrink-0">{em?.emoji}</div>
+                    <div className="shrink-0 text-slate-600">
+                      <EmotionIcon className="w-6 h-6" style={em ? { color: em.color } : undefined} />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-bold text-slate-800 truncate">{em?.label}</div>
                       <div className="text-[11px] text-slate-400 font-semibold">
@@ -202,7 +226,7 @@ export const MyWellbeingView: React.FC<MyWellbeingViewProps> = ({ user }) => {
               {recentTip?.body}
             </p>
             <div className="mt-4 text-[11px] font-bold text-brand-700">
-              💚 Más recursos en el portal de RRHH
+              Más recursos en el portal de RRHH
             </div>
           </div>
         </div>

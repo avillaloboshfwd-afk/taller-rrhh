@@ -151,7 +151,7 @@ export const UnansweredQueriesView: React.FC<UnansweredQueriesViewProps> = ({
             ))}
             {pendingQueries.length === 0 && (
               <div className="p-3 text-center text-xs text-slate-400 italic font-semibold">
-                Sin consultas pendientes 🎉
+                Sin consultas pendientes
               </div>
             )}
           </div>

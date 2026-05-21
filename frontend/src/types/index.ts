@@ -135,6 +135,7 @@ export interface EmotionOption {
   text: string;
   /** Token Tailwind del color sólido del indicador cromático (ej: bg-rose-500). */
   dot: string;
+  emoji: string;
 }
 
 /** Datos capturados durante el check-in emocional */
@@ -157,6 +158,7 @@ export interface PulseEmotion {
   /** Color hex semántico que representa el estado de ánimo. */
   color: string;
   description: string;
+  emoji: string;
 }
 
 /** Factor que influye en el estado emocional */

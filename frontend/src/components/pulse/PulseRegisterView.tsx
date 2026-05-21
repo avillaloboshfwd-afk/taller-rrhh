@@ -13,6 +13,11 @@ import {
   Compass,
   Sun,
   MoreHorizontal,
+  Smile,
+  Meh,
+  Frown,
+  AlertCircle,
+  AlertTriangle,
 } from 'lucide-react';
 import { useEmotions, useFactors, useUserEntries, useCreateEntry } from '../../hooks/usePulseData';
 import type { AppUser, DailyEntryInput, PulseEmotion } from '../../types';
@@ -22,6 +27,14 @@ interface PulseRegisterViewProps {
   onCompleted: () => void;
   showToast: (msg: string, type: 'success' | 'error' | 'info' | 'warning') => void;
 }
+
+const pulseEmotionIcons: Record<string, React.ComponentType<any>> = {
+  'muy-bien': Smile,
+  'bien': Smile,
+  'neutral': Meh,
+  'estresado': AlertTriangle,
+  'desmotivado': Frown,
+};
 
 const factorIcons: Record<string, React.ReactNode> = {
   Briefcase: <Briefcase className="w-4 h-4" />,
@@ -76,10 +89,10 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
       await createEntry(input);
       setSubmitted(true);
       await refetchEntries();
-      showToast('Pulso registrado. Gracias por compartir cómo te sentís hoy 💚', 'success');
+      showToast('Pulso registrado. Gracias por compartir cómo te sientes hoy.', 'success');
     } catch (err) {
       console.error(err);
-      showToast('No pudimos registrar tu pulso. Revisá que la API esté arriba.', 'error');
+      showToast('No pudimos registrar tu pulso. Revisa que la API esté activa.', 'error');
     } finally {
       setSubmitting(false);
     }
@@ -96,6 +109,7 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
   if (alreadyRegisteredToday && !submitted) {
     const lastEntry = userEntries?.[userEntries.length - 1];
     const lastEmotion = emotions?.find((e) => e.id === lastEntry?.emotionId);
+    const LastEmotionIcon = lastEmotion ? (pulseEmotionIcons[lastEmotion.id] || Smile) : Smile;
     return (
       <div className="flex-1 overflow-y-auto bg-gradient-to-br from-slate-50 via-white to-brand-50/30 p-8 flex items-center justify-center">
         <div className="max-w-xl w-full bg-white rounded-3xl shadow-xl border border-slate-100 p-10 text-center space-y-6 animate-fade-in">
@@ -106,8 +120,10 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
             <h2 className="text-2xl font-extrabold text-slate-800">
               Ya registraste tu pulso hoy ✓
             </h2>
-            <p className="text-sm text-slate-500 font-medium">
-              Marcaste <strong>{lastEmotion?.label || 'tu estado'}</strong> {lastEmotion?.emoji}. ¡Gracias por compartirlo con nosotros!
+            <p className="text-sm text-slate-500 font-medium flex items-center justify-center gap-1">
+              Marcaste <strong>{lastEmotion?.label || 'tu estado'}</strong>
+              <LastEmotionIcon className="w-5 h-5 text-brand-600 inline" />
+              ¡Gracias por compartirlo con nosotros!
             </p>
           </div>
           <button
@@ -157,7 +173,7 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
             <ShieldCheck className="w-3 h-3" /> Pulso Garnier · Anónimo
           </span>
           <h1 className="text-3xl font-extrabold text-slate-800 leading-tight">
-            Hola, {user.name.split(' ')[0]} 👋
+            Hola, {user.name.split(' ')[0]}
           </h1>
           <p className="text-sm text-slate-500 font-medium mt-1">
             Tu pulso de hoy lleva apenas 30 segundos.
@@ -190,6 +206,7 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {emotions?.map((e) => {
                   const isSelected = selectedEmotion === e.id;
+                  const EmotionIcon = pulseEmotionIcons[e.id] || Smile;
                   return (
                     <button
                       key={e.id}
@@ -198,7 +215,9 @@ export const PulseRegisterView: React.FC<PulseRegisterViewProps> = ({ user, onCo
                       style={isSelected ? { color: e.color, backgroundColor: `${e.color}15`, borderColor: e.color } : undefined}
                       type="button"
                     >
-                      <div className="text-4xl mb-2 leading-none">{e.emoji}</div>
+                      <div className="flex justify-center mb-2">
+                        <EmotionIcon className="w-8 h-8" />
+                      </div>
                       <div className="text-xs font-bold leading-tight">{e.label}</div>
                     </button>
                   );

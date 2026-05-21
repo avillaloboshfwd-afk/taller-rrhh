@@ -137,8 +137,9 @@ export default function App() {
         )
       );
 
-      // Si el LLM no pudo responder, registramos la consulta en el panel admin
-      if (!ai.hasAnswer) {
+      // Si el LLM no pudo responder O tiene muy baja confianza, registramos en el panel admin
+      // Pero solo si hasAnswer es explícitamente false, no solo por confianza baja
+      if (!ai.hasAnswer || (ai.confidence < 0.2 && !ai.sources.length)) {
         const newUnanswered: UnansweredQuery = {
           id: `unq-${Date.now()}`,
           queryText: text,
@@ -148,7 +149,7 @@ export default function App() {
           createdAt: new Date().toISOString(),
         };
         setUnansweredQueries((prev) => [newUnanswered, ...prev]);
-        addToast('Consulta sin respuesta encontrada. Agregada al panel de HR.', 'warning');
+        addToast('Consulta requiere revisión. Agregada al panel de HR.', 'warning');
       }
     } catch (err) {
       console.error('[Groq] Error al llamar al LLM:', err);
@@ -159,7 +160,7 @@ export default function App() {
         sessionId: currentSessionId,
         role: 'assistant',
         content:
-          '⚠️ No pude conectar con el asistente en este momento. Intentá enviar tu mensaje de nuevo en unos segundos.',
+          'No pude conectar con el asistente en este momento. Intenta enviar tu mensaje de nuevo en unos segundos.',
         sources: [],
         confidence: 0,
         hasAnswer: false,

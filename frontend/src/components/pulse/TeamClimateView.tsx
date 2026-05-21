@@ -24,6 +24,9 @@ import {
   Eye,
   EyeOff,
   Lightbulb,
+  Smile,
+  Meh,
+  Frown,
 } from 'lucide-react';
 import { useTeamReport, useTeamAlerts, useEmotions } from '../../hooks/usePulseData';
 import type { AppUser, TeamStatus } from '../../types';
@@ -33,6 +36,14 @@ interface TeamClimateViewProps {
 }
 
 const MIN_RESPONSES_FOR_KANONIMITY = 5;
+
+const pulseEmotionIcons: Record<string, React.ComponentType<any>> = {
+  'muy-bien': Smile,
+  'bien': Smile,
+  'neutral': Meh,
+  'estresado': AlertTriangle,
+  'desmotivado': Frown,
+};
 
 const statusBadgeStyle: Record<TeamStatus, { label: string; bg: string; text: string; border: string }> = {
   saludable: { label: 'Saludable', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200' },
@@ -74,8 +85,8 @@ export const TeamClimateView: React.FC<TeamClimateViewProps> = ({ user }) => {
   const status = statusBadgeStyle[report.status];
   const distributionData = emotions
     ?.map((em) => ({
+      id: em.id,
       label: em.label,
-      emoji: em.emoji,
       count: report.distribution[em.id] || 0,
       color: em.color,
     }))
@@ -199,14 +210,17 @@ export const TeamClimateView: React.FC<TeamClimateViewProps> = ({ user }) => {
                   </ResponsiveContainer>
                 </div>
                 <div className="space-y-1.5 mt-3">
-                  {distributionData.map((d) => (
-                    <div key={d.label} className="flex items-center justify-between text-[11px] font-bold">
-                      <span className="flex items-center gap-1.5 text-slate-700">
-                        <span>{d.emoji}</span> {d.label}
-                      </span>
-                      <span className="text-slate-500">{d.count}</span>
-                    </div>
-                  ))}
+                  {distributionData.map((d) => {
+                    const EmotionIcon = pulseEmotionIcons[d.id] || Smile;
+                    return (
+                      <div key={d.label} className="flex items-center justify-between text-[11px] font-bold">
+                        <span className="flex items-center gap-1.5 text-slate-700">
+                          <EmotionIcon className="w-3.5 h-3.5 inline" style={{ color: d.color }} /> {d.label}
+                        </span>
+                        <span className="text-slate-500">{d.count}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
