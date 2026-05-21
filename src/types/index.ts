@@ -126,11 +126,15 @@ export type EmotionId =
 export interface EmotionOption {
   id: EmotionId;
   label: string;
-  emoji: string;
   description: string;
+  /** Token Tailwind del fondo pálido cuando la opción está seleccionada (ej: bg-rose-50). */
   bg: string;
+  /** Token Tailwind del anillo cuando la opción está seleccionada (ej: ring-rose-400). */
   ring: string;
+  /** Token Tailwind del color de texto principal (ej: text-rose-700). */
   text: string;
+  /** Token Tailwind del color sólido del indicador cromático (ej: bg-rose-500). */
+  dot: string;
 }
 
 /** Datos capturados durante el check-in emocional */
@@ -148,9 +152,9 @@ export interface CheckInData {
 export interface PulseEmotion {
   id: string;
   label: string;
-  emoji: string;
   score: 1 | 2 | 3 | 4 | 5;
   category: 'positiva' | 'neutral' | 'negativa';
+  /** Color hex semántico que representa el estado de ánimo. */
   color: string;
   description: string;
 }
