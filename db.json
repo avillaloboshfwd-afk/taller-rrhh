@@ -1,0 +1,363 @@
+{
+  "emotions": [
+    { "id": "muy-bien", "label": "Muy bien", "emoji": "😄", "score": 5, "category": "positiva", "color": "#10b981", "description": "Energía alta y enfoque" },
+    { "id": "bien", "label": "Bien", "emoji": "🙂", "score": 4, "category": "positiva", "color": "#34d399", "description": "Día tranquilo y productivo" },
+    { "id": "neutral", "label": "Neutral", "emoji": "😐", "score": 3, "category": "neutral", "color": "#f59e0b", "description": "Ni bien ni mal" },
+    { "id": "estresado", "label": "Estresado/a", "emoji": "😰", "score": 2, "category": "negativa", "color": "#f97316", "description": "Carga o presión alta" },
+    { "id": "desmotivado", "label": "Desmotivado/a", "emoji": "😔", "score": 1, "category": "negativa", "color": "#ef4444", "description": "Falta de energía o entusiasmo" }
+  ],
+  "factors": [
+    { "id": "carga-trabajo", "label": "Carga de trabajo", "icon": "Briefcase" },
+    { "id": "equipo", "label": "Relación con el equipo", "icon": "Users" },
+    { "id": "liderazgo", "label": "Liderazgo", "icon": "Compass" },
+    { "id": "personal", "label": "Factores personales", "icon": "Heart" },
+    { "id": "ambiente", "label": "Ambiente físico", "icon": "Sun" },
+    { "id": "otro", "label": "Otro", "icon": "MoreHorizontal" }
+  ],
+  "teams": [
+    { "id": "operaciones", "name": "Operaciones", "memberCount": 18, "status": "saludable", "managerUserId": "user-jefe-ops", "description": "Logística y cadena de suministro" },
+    { "id": "ventas", "name": "Ventas", "memberCount": 14, "status": "observacion", "managerUserId": "user-jefe-ventas", "description": "Cuentas comerciales y trade" },
+    { "id": "tecnologia", "name": "Tecnología", "memberCount": 22, "status": "alerta", "managerUserId": "user-jefe-tech", "description": "Desarrollo de software y data" },
+    { "id": "rrhh", "name": "Recursos Humanos", "memberCount": 8, "status": "saludable", "managerUserId": "user-admin", "description": "Gestión humana, cultura y bienestar" },
+    { "id": "finanzas", "name": "Finanzas", "memberCount": 11, "status": "saludable", "managerUserId": "user-jefe-fin", "description": "Contabilidad, control y tesorería" }
+  ],
+  "entries": [
+    { "id": "e-001", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-04-27T09:15:00Z" },
+    { "id": "e-002", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-04-29T09:30:00Z" },
+    { "id": "e-003", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Sprints muy ajustados", "createdAt": "2026-05-04T09:45:00Z" },
+    { "id": "e-004", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo", "liderazgo"], "comment": "", "createdAt": "2026-05-06T10:00:00Z" },
+    { "id": "e-005", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "desmotivado", "factors": ["carga-trabajo"], "comment": "Demasiadas reuniones esta semana", "createdAt": "2026-05-08T09:20:00Z" },
+    { "id": "e-006", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-11T09:35:00Z" },
+    { "id": "e-007", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "neutral", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-13T09:10:00Z" },
+    { "id": "e-008", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "Buena retro hoy", "createdAt": "2026-05-14T09:55:00Z" },
+    { "id": "e-009", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-15T09:40:00Z" },
+    { "id": "e-010", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "Cerramos un release con calma", "createdAt": "2026-05-18T09:05:00Z" },
+    { "id": "e-011", "userId": "user-pedro", "teamId": "tecnologia", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-19T09:25:00Z" },
+
+    { "id": "e-020", "userId": "user-maria", "teamId": "ventas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T10:10:00Z" },
+    { "id": "e-021", "userId": "user-maria", "teamId": "ventas", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-06T10:20:00Z" },
+    { "id": "e-022", "userId": "user-maria", "teamId": "ventas", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Cierre de mes complicado", "createdAt": "2026-05-08T10:00:00Z" },
+    { "id": "e-023", "userId": "user-maria", "teamId": "ventas", "emotionId": "neutral", "factors": ["liderazgo"], "comment": "", "createdAt": "2026-05-11T10:30:00Z" },
+    { "id": "e-024", "userId": "user-maria", "teamId": "ventas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-13T10:15:00Z" },
+    { "id": "e-025", "userId": "user-maria", "teamId": "ventas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-18T10:40:00Z" },
+
+    { "id": "e-030", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-04T08:50:00Z" },
+    { "id": "e-031", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-06T08:55:00Z" },
+    { "id": "e-032", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-08T08:45:00Z" },
+    { "id": "e-033", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "Cierre contable", "createdAt": "2026-05-13T09:00:00Z" },
+    { "id": "e-034", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-15T08:50:00Z" },
+    { "id": "e-035", "userId": "user-carlos", "teamId": "finanzas", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-19T08:55:00Z" },
+
+    { "id": "e-040", "userId": "user-ana", "teamId": "operaciones", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T08:30:00Z" },
+    { "id": "e-041", "userId": "user-ana", "teamId": "operaciones", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-06T08:35:00Z" },
+    { "id": "e-042", "userId": "user-ana", "teamId": "operaciones", "emotionId": "muy-bien", "factors": ["equipo", "liderazgo"], "comment": "Reconocimiento de jefatura", "createdAt": "2026-05-11T08:40:00Z" },
+    { "id": "e-043", "userId": "user-ana", "teamId": "operaciones", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-13T08:25:00Z" },
+    { "id": "e-044", "userId": "user-ana", "teamId": "operaciones", "emotionId": "neutral", "factors": ["ambiente"], "comment": "", "createdAt": "2026-05-18T08:30:00Z" },
+    { "id": "e-045", "userId": "user-ana", "teamId": "operaciones", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-19T08:30:00Z" },
+
+    { "id": "e-100", "userId": "user-anon-t1", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Demasiadas tareas pendientes", "createdAt": "2026-05-04T11:00:00Z" },
+    { "id": "e-101", "userId": "user-anon-t1", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo", "liderazgo"], "comment": "", "createdAt": "2026-05-06T11:00:00Z" },
+    { "id": "e-102", "userId": "user-anon-t1", "teamId": "tecnologia", "emotionId": "desmotivado", "factors": ["carga-trabajo"], "comment": "Siento que no se valora el esfuerzo", "createdAt": "2026-05-08T11:00:00Z" },
+    { "id": "e-103", "userId": "user-anon-t1", "teamId": "tecnologia", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-13T11:00:00Z" },
+    { "id": "e-104", "userId": "user-anon-t1", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-18T11:00:00Z" },
+
+    { "id": "e-110", "userId": "user-anon-t2", "teamId": "tecnologia", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-04T14:00:00Z" },
+    { "id": "e-111", "userId": "user-anon-t2", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Plazos imposibles", "createdAt": "2026-05-06T14:00:00Z" },
+    { "id": "e-112", "userId": "user-anon-t2", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["liderazgo"], "comment": "", "createdAt": "2026-05-08T14:00:00Z" },
+    { "id": "e-113", "userId": "user-anon-t2", "teamId": "tecnologia", "emotionId": "desmotivado", "factors": ["carga-trabajo", "liderazgo"], "comment": "Falta claridad en prioridades", "createdAt": "2026-05-13T14:00:00Z" },
+    { "id": "e-114", "userId": "user-anon-t2", "teamId": "tecnologia", "emotionId": "neutral", "factors": [], "comment": "", "createdAt": "2026-05-18T14:00:00Z" },
+
+    { "id": "e-120", "userId": "user-anon-t3", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T15:00:00Z" },
+    { "id": "e-121", "userId": "user-anon-t3", "teamId": "tecnologia", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-06T15:00:00Z" },
+    { "id": "e-122", "userId": "user-anon-t3", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Mucho contexto switching", "createdAt": "2026-05-08T15:00:00Z" },
+    { "id": "e-123", "userId": "user-anon-t3", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-13T15:00:00Z" },
+    { "id": "e-124", "userId": "user-anon-t3", "teamId": "tecnologia", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-19T15:00:00Z" },
+
+    { "id": "e-130", "userId": "user-anon-t4", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-06T16:00:00Z" },
+    { "id": "e-131", "userId": "user-anon-t4", "teamId": "tecnologia", "emotionId": "estresado", "factors": ["carga-trabajo", "ambiente"], "comment": "Open space ruidoso esta semana", "createdAt": "2026-05-08T16:00:00Z" },
+    { "id": "e-132", "userId": "user-anon-t4", "teamId": "tecnologia", "emotionId": "neutral", "factors": [], "comment": "", "createdAt": "2026-05-13T16:00:00Z" },
+    { "id": "e-133", "userId": "user-anon-t4", "teamId": "tecnologia", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-19T16:00:00Z" },
+
+    { "id": "e-200", "userId": "user-anon-v1", "teamId": "ventas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T12:00:00Z" },
+    { "id": "e-201", "userId": "user-anon-v1", "teamId": "ventas", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "Cierre de mes", "createdAt": "2026-05-08T12:00:00Z" },
+    { "id": "e-202", "userId": "user-anon-v1", "teamId": "ventas", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "Cuota difícil este mes", "createdAt": "2026-05-13T12:00:00Z" },
+    { "id": "e-203", "userId": "user-anon-v1", "teamId": "ventas", "emotionId": "neutral", "factors": [], "comment": "", "createdAt": "2026-05-18T12:00:00Z" },
+
+    { "id": "e-210", "userId": "user-anon-v2", "teamId": "ventas", "emotionId": "neutral", "factors": ["liderazgo"], "comment": "", "createdAt": "2026-05-04T13:00:00Z" },
+    { "id": "e-211", "userId": "user-anon-v2", "teamId": "ventas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-08T13:00:00Z" },
+    { "id": "e-212", "userId": "user-anon-v2", "teamId": "ventas", "emotionId": "estresado", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-13T13:00:00Z" },
+    { "id": "e-213", "userId": "user-anon-v2", "teamId": "ventas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-19T13:00:00Z" },
+
+    { "id": "e-220", "userId": "user-anon-v3", "teamId": "ventas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-06T14:30:00Z" },
+    { "id": "e-221", "userId": "user-anon-v3", "teamId": "ventas", "emotionId": "muy-bien", "factors": ["equipo", "liderazgo"], "comment": "Cerré una cuenta importante", "createdAt": "2026-05-11T14:30:00Z" },
+    { "id": "e-222", "userId": "user-anon-v3", "teamId": "ventas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-15T14:30:00Z" },
+    { "id": "e-223", "userId": "user-anon-v3", "teamId": "ventas", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-19T14:30:00Z" },
+
+    { "id": "e-300", "userId": "user-anon-f1", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-04T09:00:00Z" },
+    { "id": "e-301", "userId": "user-anon-f1", "teamId": "finanzas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-08T09:00:00Z" },
+    { "id": "e-302", "userId": "user-anon-f1", "teamId": "finanzas", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-13T09:00:00Z" },
+    { "id": "e-303", "userId": "user-anon-f1", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-18T09:00:00Z" },
+
+    { "id": "e-310", "userId": "user-anon-f2", "teamId": "finanzas", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "Cierre contable", "createdAt": "2026-05-06T10:00:00Z" },
+    { "id": "e-311", "userId": "user-anon-f2", "teamId": "finanzas", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-11T10:00:00Z" },
+    { "id": "e-312", "userId": "user-anon-f2", "teamId": "finanzas", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-15T10:00:00Z" },
+    { "id": "e-313", "userId": "user-anon-f2", "teamId": "finanzas", "emotionId": "muy-bien", "factors": [], "comment": "", "createdAt": "2026-05-19T10:00:00Z" },
+
+    { "id": "e-400", "userId": "user-anon-o1", "teamId": "operaciones", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T07:30:00Z" },
+    { "id": "e-401", "userId": "user-anon-o1", "teamId": "operaciones", "emotionId": "muy-bien", "factors": ["equipo", "liderazgo"], "comment": "", "createdAt": "2026-05-08T07:30:00Z" },
+    { "id": "e-402", "userId": "user-anon-o1", "teamId": "operaciones", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-13T07:30:00Z" },
+    { "id": "e-403", "userId": "user-anon-o1", "teamId": "operaciones", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-18T07:30:00Z" },
+
+    { "id": "e-410", "userId": "user-anon-o2", "teamId": "operaciones", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-06T07:45:00Z" },
+    { "id": "e-411", "userId": "user-anon-o2", "teamId": "operaciones", "emotionId": "neutral", "factors": ["ambiente"], "comment": "", "createdAt": "2026-05-11T07:45:00Z" },
+    { "id": "e-412", "userId": "user-anon-o2", "teamId": "operaciones", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-15T07:45:00Z" },
+    { "id": "e-413", "userId": "user-anon-o2", "teamId": "operaciones", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-19T07:45:00Z" },
+
+    { "id": "e-500", "userId": "user-anon-r1", "teamId": "rrhh", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-04T09:30:00Z" },
+    { "id": "e-501", "userId": "user-anon-r1", "teamId": "rrhh", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-08T09:30:00Z" },
+    { "id": "e-502", "userId": "user-anon-r1", "teamId": "rrhh", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-13T09:30:00Z" },
+    { "id": "e-503", "userId": "user-anon-r1", "teamId": "rrhh", "emotionId": "bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-18T09:30:00Z" },
+
+    { "id": "e-510", "userId": "user-anon-r2", "teamId": "rrhh", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-06T10:30:00Z" },
+    { "id": "e-511", "userId": "user-anon-r2", "teamId": "rrhh", "emotionId": "neutral", "factors": ["carga-trabajo"], "comment": "", "createdAt": "2026-05-11T10:30:00Z" },
+    { "id": "e-512", "userId": "user-anon-r2", "teamId": "rrhh", "emotionId": "muy-bien", "factors": ["equipo"], "comment": "", "createdAt": "2026-05-15T10:30:00Z" },
+    { "id": "e-513", "userId": "user-anon-r2", "teamId": "rrhh", "emotionId": "bien", "factors": [], "comment": "", "createdAt": "2026-05-19T10:30:00Z" }
+  ],
+  "climateReports": [
+    {
+      "id": "report-tecnologia",
+      "teamId": "tecnologia",
+      "teamName": "Tecnología",
+      "period": "ultimas-4-semanas",
+      "periodLabel": "Últimas 4 semanas",
+      "wellbeingIndex": 2.7,
+      "previousIndex": 3.4,
+      "participation": 0.82,
+      "trend": "down",
+      "trendDelta": -0.7,
+      "responsesCount": 24,
+      "status": "alerta",
+      "distribution": {
+        "muy-bien": 1,
+        "bien": 5,
+        "neutral": 6,
+        "estresado": 9,
+        "desmotivado": 3
+      },
+      "weeklyTrend": [
+        { "week": "Sem 17", "index": 3.6, "responses": 5 },
+        { "week": "Sem 18", "index": 3.2, "responses": 6 },
+        { "week": "Sem 19", "index": 2.4, "responses": 7 },
+        { "week": "Sem 20", "index": 2.8, "responses": 6 }
+      ],
+      "topFactors": [
+        { "factorId": "carga-trabajo", "label": "Carga de trabajo", "count": 14, "trend": "up" },
+        { "factorId": "liderazgo", "label": "Liderazgo", "count": 5, "trend": "up" },
+        { "factorId": "equipo", "label": "Relación con el equipo", "count": 5, "trend": "stable" },
+        { "factorId": "ambiente", "label": "Ambiente físico", "count": 1, "trend": "stable" }
+      ],
+      "keywords": [
+        { "word": "carga", "count": 9 },
+        { "word": "plazos", "count": 5 },
+        { "word": "reuniones", "count": 4 },
+        { "word": "prioridades", "count": 3 },
+        { "word": "reconocimiento", "count": 2 },
+        { "word": "claridad", "count": 2 },
+        { "word": "ruidoso", "count": 1 }
+      ],
+      "narrative": "El área de Tecnología muestra una tendencia descendente en bienestar durante las últimas 3 semanas. La carga de trabajo es el factor mencionado con mayor frecuencia (3x más que el promedio histórico) y aparece relacionada con plazos y reuniones excesivas. Se sugiere revisar la planificación de sprints y la asignación de prioridades. La participación es alta (82%), lo que indica buen compromiso del equipo con la herramienta."
+    },
+    {
+      "id": "report-ventas",
+      "teamId": "ventas",
+      "teamName": "Ventas",
+      "period": "ultimas-4-semanas",
+      "periodLabel": "Últimas 4 semanas",
+      "wellbeingIndex": 3.4,
+      "previousIndex": 3.5,
+      "participation": 0.71,
+      "trend": "stable",
+      "trendDelta": -0.1,
+      "responsesCount": 13,
+      "status": "observacion",
+      "distribution": {
+        "muy-bien": 1,
+        "bien": 5,
+        "neutral": 4,
+        "estresado": 3,
+        "desmotivado": 0
+      },
+      "weeklyTrend": [
+        { "week": "Sem 17", "index": 3.6, "responses": 3 },
+        { "week": "Sem 18", "index": 3.5, "responses": 4 },
+        { "week": "Sem 19", "index": 3.1, "responses": 3 },
+        { "week": "Sem 20", "index": 3.3, "responses": 3 }
+      ],
+      "topFactors": [
+        { "factorId": "carga-trabajo", "label": "Carga de trabajo", "count": 6, "trend": "up" },
+        { "factorId": "equipo", "label": "Relación con el equipo", "count": 5, "trend": "stable" },
+        { "factorId": "liderazgo", "label": "Liderazgo", "count": 2, "trend": "stable" }
+      ],
+      "keywords": [
+        { "word": "cuota", "count": 4 },
+        { "word": "cierre", "count": 4 },
+        { "word": "cuenta", "count": 2 },
+        { "word": "mes", "count": 2 }
+      ],
+      "narrative": "El equipo de Ventas mantiene un clima estable con leves picos de estrés durante los cierres de mes. La relación con el equipo se mantiene sólida como factor positivo recurrente. Recomendación: monitorear el ciclo de cuotas, especialmente la última semana del mes."
+    },
+    {
+      "id": "report-operaciones",
+      "teamId": "operaciones",
+      "teamName": "Operaciones",
+      "period": "ultimas-4-semanas",
+      "periodLabel": "Últimas 4 semanas",
+      "wellbeingIndex": 4.1,
+      "previousIndex": 4.0,
+      "participation": 0.78,
+      "trend": "up",
+      "trendDelta": 0.1,
+      "responsesCount": 14,
+      "status": "saludable",
+      "distribution": {
+        "muy-bien": 4,
+        "bien": 7,
+        "neutral": 3,
+        "estresado": 0,
+        "desmotivado": 0
+      },
+      "weeklyTrend": [
+        { "week": "Sem 17", "index": 3.9, "responses": 3 },
+        { "week": "Sem 18", "index": 4.0, "responses": 4 },
+        { "week": "Sem 19", "index": 4.1, "responses": 3 },
+        { "week": "Sem 20", "index": 4.3, "responses": 4 }
+      ],
+      "topFactors": [
+        { "factorId": "equipo", "label": "Relación con el equipo", "count": 9, "trend": "up" },
+        { "factorId": "liderazgo", "label": "Liderazgo", "count": 3, "trend": "up" },
+        { "factorId": "ambiente", "label": "Ambiente físico", "count": 2, "trend": "stable" }
+      ],
+      "keywords": [
+        { "word": "reconocimiento", "count": 3 },
+        { "word": "equipo", "count": 5 },
+        { "word": "ambiente", "count": 2 }
+      ],
+      "narrative": "Operaciones se mantiene como el equipo con mejor índice de bienestar de la organización. El reconocimiento por parte de jefatura y la fuerte cohesión de equipo aparecen consistentemente como factores positivos. Buen modelo a replicar en otras áreas."
+    },
+    {
+      "id": "report-finanzas",
+      "teamId": "finanzas",
+      "teamName": "Finanzas",
+      "period": "ultimas-4-semanas",
+      "periodLabel": "Últimas 4 semanas",
+      "wellbeingIndex": 3.9,
+      "previousIndex": 3.8,
+      "participation": 0.74,
+      "trend": "up",
+      "trendDelta": 0.1,
+      "responsesCount": 10,
+      "status": "saludable",
+      "distribution": {
+        "muy-bien": 3,
+        "bien": 5,
+        "neutral": 2,
+        "estresado": 0,
+        "desmotivado": 0
+      },
+      "weeklyTrend": [
+        { "week": "Sem 17", "index": 3.8, "responses": 2 },
+        { "week": "Sem 18", "index": 3.8, "responses": 3 },
+        { "week": "Sem 19", "index": 3.9, "responses": 2 },
+        { "week": "Sem 20", "index": 4.2, "responses": 3 }
+      ],
+      "topFactors": [
+        { "factorId": "equipo", "label": "Relación con el equipo", "count": 5, "trend": "stable" },
+        { "factorId": "carga-trabajo", "label": "Carga de trabajo", "count": 2, "trend": "stable" }
+      ],
+      "keywords": [
+        { "word": "cierre", "count": 2 },
+        { "word": "contable", "count": 2 }
+      ],
+      "narrative": "Finanzas muestra un clima saludable y estable. Los cierres contables generan picos puntuales de carga pero el equipo los maneja sin afectación significativa al bienestar general."
+    },
+    {
+      "id": "report-rrhh",
+      "teamId": "rrhh",
+      "teamName": "Recursos Humanos",
+      "period": "ultimas-4-semanas",
+      "periodLabel": "Últimas 4 semanas",
+      "wellbeingIndex": 4.0,
+      "previousIndex": 3.9,
+      "participation": 0.88,
+      "trend": "up",
+      "trendDelta": 0.1,
+      "responsesCount": 8,
+      "status": "saludable",
+      "distribution": {
+        "muy-bien": 2,
+        "bien": 5,
+        "neutral": 1,
+        "estresado": 0,
+        "desmotivado": 0
+      },
+      "weeklyTrend": [
+        { "week": "Sem 17", "index": 3.9, "responses": 2 },
+        { "week": "Sem 18", "index": 4.0, "responses": 2 },
+        { "week": "Sem 19", "index": 4.0, "responses": 2 },
+        { "week": "Sem 20", "index": 4.1, "responses": 2 }
+      ],
+      "topFactors": [
+        { "factorId": "equipo", "label": "Relación con el equipo", "count": 4, "trend": "stable" },
+        { "factorId": "carga-trabajo", "label": "Carga de trabajo", "count": 1, "trend": "stable" }
+      ],
+      "keywords": [
+        { "word": "equipo", "count": 3 }
+      ],
+      "narrative": "El área de RRHH mantiene una alta participación (88%) y un clima sólido. La cohesión del equipo es el principal motor de bienestar reportado."
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-001",
+      "teamId": "tecnologia",
+      "teamName": "Tecnología",
+      "severity": "high",
+      "type": "factor-aumento",
+      "title": "Carga de trabajo en aumento sostenido",
+      "message": "El factor 'carga de trabajo' fue mencionado 14 veces en las últimas 2 semanas, 3x más que el promedio histórico del equipo.",
+      "recommendation": "Revisar la planificación de sprints y la cantidad de reuniones recurrentes.",
+      "createdAt": "2026-05-18T08:00:00Z",
+      "acknowledged": false
+    },
+    {
+      "id": "alert-002",
+      "teamId": "tecnologia",
+      "teamName": "Tecnología",
+      "severity": "medium",
+      "type": "indice-bajo",
+      "title": "Índice de bienestar bajo el umbral",
+      "message": "El índice del equipo cayó a 2.7 (umbral saludable: 3.5+) durante las últimas 3 semanas.",
+      "recommendation": "Coordinar conversaciones 1:1 con miembros del equipo para entender el contexto.",
+      "createdAt": "2026-05-15T08:00:00Z",
+      "acknowledged": false
+    },
+    {
+      "id": "alert-003",
+      "teamId": "ventas",
+      "teamName": "Ventas",
+      "severity": "low",
+      "type": "patron-ciclico",
+      "title": "Patrón cíclico de estrés en cierre de mes",
+      "message": "Se detecta un incremento recurrente de menciones a 'cuota' y 'cierre' durante la última semana de cada mes.",
+      "recommendation": "Considerar mejoras al proceso de cierre comercial.",
+      "createdAt": "2026-05-14T08:00:00Z",
+      "acknowledged": true
+    }
+  ],
+  "wellbeingTips": [
+    { "id": "tip-001", "category": "estres", "title": "Técnica de respiración 4-7-8", "body": "Inhala por la nariz 4 segundos, retén 7 segundos, exhala por la boca 8 segundos. Repite 3 veces. Reduce la activación del sistema nervioso simpático en minutos." },
+    { "id": "tip-002", "category": "cansancio", "title": "Micropausas cada 90 minutos", "body": "Levantate, caminá 2 minutos y mirá a 6 metros de distancia. Ayuda a la circulación y descansa la vista." },
+    { "id": "tip-003", "category": "motivacion", "title": "Anclar logros pequeños", "body": "Al final del día, escribí 3 cosas que lograste, por pequeñas que sean. Genera evidencia tangible de progreso." },
+    { "id": "tip-004", "category": "general", "title": "Programa de Asistencia al Empleado", "body": "Garnier ofrece hasta 6 sesiones gratuitas anuales de apoyo psicológico, totalmente confidenciales. Línea ética: 800-GARNIER." }
+  ]
+}
